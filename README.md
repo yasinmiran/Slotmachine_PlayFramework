@@ -3,7 +3,7 @@
 <h3>Object oriented Programming module - Assessment 2 - slotmachine game.</h3>
 <h4>Technologies used</h4>
 <ul>
-    <li>For data Persistence - MongoDB (Using <a href="https://github.com/morellik/play-morphia">Playmorphia</a></li>
+    <li>For data Persistence - MongoDB (Using <a href="https://github.com/morellik/play-morphia">Playmorphia</a>)</li>
     <li>Backend - PlayFramework with Java</li>
     <li>Frontend - HTML with Twitter Bootstrap + JS (Typescript in development)</li>
 </ul>
