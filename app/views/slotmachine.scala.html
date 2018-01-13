@@ -1,0 +1,64 @@
+<section class="slot-container">
+
+    <div class="title-holder">
+        <h1 id="title">SLOT MACHINE</h1>
+    </div>
+
+    <div class="reel-holder animated slideInDown">
+        <table>
+            <tr>
+                <td>
+                    <div class="reel">
+                        <img id="reel_1" src="@routes.Assets.at("images/bell.png")">
+                    </div>
+                </td>
+                <td>
+                    <div class="reel">
+                        <img id="reel_2" src="@routes.Assets.at("images/bell.png")">
+                    </div>
+                </td>
+                <td>
+                    <div class="reel">
+                        <img id="reel_3" src="@routes.Assets.at("images/bell.png")">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="display-info animated slideInRight">
+        <table>
+            <tr>
+                <td><label id="credit-amount">Credits: 0$</label></td>
+                <td><label id="bet-amount">Bet Amount: 0$</label></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="ui-controls animated slideInLeft">
+
+        <table>
+            <tr>
+                <td><button id="bet-one">BET ONE</button></td>
+                <td><button id="spin">SPIN</button></td>
+                <td><button id="bet-max">BET MAX</button></td>
+            </tr>
+            <tr>
+                <td> <button id="reset">RESET</button></td>
+                <td><button id="add-coin">ADD COIN</button></td>
+                <form action="@routes.MainController.stats()">
+                    <td>
+                        <button type="submit" id="stats">STATISTICS</button>
+                    </td>
+                </form>
+            </tr>
+        </table>
+    </div>
+
+    <div class="result-holder animated slideInUp">
+        <h1 id="result-title">~~ Welcome ~~</h1>
+    </div>
+
+</section>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">

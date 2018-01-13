@@ -1,0 +1,16 @@
+@()
+
+<div class="container">
+    <form action="@routes.MainController.login()" method="POST" class="form-inline search-box card">
+        <div class="caption">
+            <h3 class="animated infinite pulse">SLOT MACHINE</h3>
+            <p class="text-center">Login to save your stats <i class="em em-hugging_face"></i></p>
+        </div>
+        <input type="email" id="username" name="email" class="form-control m-2" placeholder="Enter Email" required>
+        <input type="password" id="password" name="paw" class="form-control m-2" placeholder="Password" required>
+        <button class="btn btn-success mt-2" id="logBtn" type="submit">Submit</button>
+        <a href="@routes.MainController.reg$userPage()">Click here to register</a>
+    </form>
+</div>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">

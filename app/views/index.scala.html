@@ -1,0 +1,16 @@
+@(title: String, message: String)
+
+    @main(title) {
+
+        @{
+            if(message.equals("slotmachine")) {
+                slotmachine()
+            } else if(message.equals("login")) {
+                login()
+            } else if(message.equals("register")) {
+                register()
+            } else {
+                error404()
+            }
+        }
+    }

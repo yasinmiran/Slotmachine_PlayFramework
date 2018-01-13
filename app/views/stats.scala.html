@@ -1,0 +1,116 @@
+@(totalWins: Integer, totalLoses: Integer,
+        totalPartialWins: Integer, totalSpins: Integer, creditsWon: Integer, creditsLost: Integer,
+        feedback: String, avg: Integer, cnpg: Integer)
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"
+integrity="sha256-N4u5BjTLNwmGul6RgLoESPNqDFVUibVuOYhP4gJgrew=" crossorigin="anonymous"></script>
+
+<section class="stat-container">
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Statistics Chart (Click the little boxes to customize)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <canvas id="c" width="600" height="450"></canvas>
+                </td>
+                <td>
+                    <div class="animated fadeInUp">
+                        <ul>
+                            <li class="list-group-item">Total Wins: @totalWins</li>
+                            <li class="list-group-item">Total Loses: @totalLoses</li>
+                            <li class="list-group-item">Total PartialWins: @totalPartialWins</li>
+                            <li class="list-group-item">Total Spins: @totalSpins</li>
+                            <li class="list-group-item">Credits Won: @creditsWon $</li>
+                            <li class="list-group-item">Credits Lost: @creditsLost $</li>
+                            <li class="list-group-item">Coins Netted: @cnpg $</li>
+                            <li class="list-group-item">Average: @avg %</li>
+                            <li type="button" id="save" class="btn btn-success w-100 text-center mt-2">Save this</li>
+                            <li type="button" id="view" class="btn btn-success w-100 text-center mt-2"
+                            data-toggle="modal" data-target="#loginModal">View Old stats</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-center h4">@feedback</p>
+    <style>
+            body {
+                background: url("/assets/images/cover.png") repeat;
+            }
+
+            .stat-container {
+
+                background-color: rgb(255, 255, 255);
+                position: relative;
+                top: 40px;
+                margin: auto;
+                border-radius: 10px;
+                width: 60%;
+                height: 670px;
+                box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.18);
+                padding: 10px;
+                align-items: center;
+            }
+    </style>
+
+    <script id="$e$e$">
+
+            let ctx = document.getElementById("c").getContext('2d');
+            Chart.defaults.global.defaultFontFamily = "Pangolin";
+            Chart.defaults.global.defaultFontSize = 18;
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ["TotalWins", "TotalLoses", "TotalPartialWins", "TotalSpins", "CreditsWon", "CreditsLost"],
+                    datasets: [{
+                        label: '# Gameplay stats',
+                        data: [@totalWins, @totalLoses, @totalPartialWins, @totalSpins, @creditsWon, @creditsLost],
+                        backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                        borderColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {responsive: !0, scaleBeginAtZero: !0,}
+            });
+            let save = function () {
+                let e = prompt("Enter email adress");
+                if (e !== null && e !== "") {
+                    new SlotMachineHttp().post('http://localhost:9000/save', {
+                        email: e,
+                        totalWins:@totalWins,
+                        totalLoses:@totalLoses,
+                        totalPartialWins:@totalPartialWins,
+                        totalSpins:@totalSpins,
+                        creditsWon:@creditsWon,
+                        creditsLost:@creditsLost,
+                        coinsNetted:@cnpg,
+                        average:@avg,
+                        date: new Date().toUTCString()
+                    }, function (e, b) {
+                        e ? console.log(e) : alert(b)
+                    })
+                } else {
+                    alert("Nope, you must enter your email :)")
+                }
+            }
+            let view = function () {
+                let e = prompt("Enter email adress");
+                if (e !== null && e !== "") {
+                    new SlotMachineHttp().post('http://localhost:9000/view', {email: e}, function (e, b) {
+                        e ? console.log(e) : document.write(b)
+                    })
+                } else {
+                    alert("Nope, you must enter your email :)")
+                }
+            }
+            document.getElementById('save').addEventListener('click', save);
+            document.getElementById('view').addEventListener('click', view);
+            document.getElementById('$e$e$').innerHTML = '';
+    </script>
+</section>

@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET         /                    controllers.MainController.index()
+
+POST        /                    controllers.MainController.login()
+
+GET         /register            controllers.MainController.reg$userPage()
+
+POST        /stats               controllers.MainController.stats()
+
+POST        /save                controllers.MainController.save()
+
+POST        /view                controllers.MainController.view()
+
+POST        /register            controllers.MainController.register()
+
+GET         /assets/*file        controllers.Assets.at(path="/public", file)

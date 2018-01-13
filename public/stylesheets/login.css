@@ -1,0 +1,50 @@
+
+body {
+    background: url("/assets/images/cover.png") repeat;
+}
+
+p {
+    font-family: Pangolin;
+    font-size: 15px;
+}
+
+h3 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: Montserrat;
+    font-size: 25px;
+}
+
+a {
+    transition: 0.3s;
+    color: #333333;
+    margin-top: 10px;
+    font-family: Pangolin;
+    font-size: 15px;
+}
+
+a:focus {
+    outline: 0 solid;
+
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.search-box {
+    margin: 180px auto;
+    width: 30%;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+
+
+

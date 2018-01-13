@@ -1,0 +1,15 @@
+<div class="container">
+    <form action="@routes.MainController.register()" method="POST" class="form-inline search-box card">
+        <div class="caption">
+            <h3 class="animated infinite pulse">SLOT MACHINE</h3>
+            <p class="text-center">Create your account <i class="em em-grinning_face_with_one_large_and_one_small_eye"></i></p>
+        </div>
+        <input type="email" id="username" name="email" class="form-control m-2" placeholder="Enter email" required>
+        <input type="password" id="password" name="paw" class="form-control m-2" placeholder="Password" required>
+        <input type="password" id="cpassword" name="cpaw" class="form-control m-2" placeholder="Confirm Password" required>
+        <button class="btn btn-success mt-2" type="submit">Register</button>
+        <a href="@routes.MainController.index()">Already have an account? Click here</a>
+    </form>
+</div>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/login.css")">

@@ -1,0 +1,99 @@
+@(email: String, date: String, totalWins: Integer, totalLoses: Integer,
+        totalPartialWins: Integer, totalSpins: Integer, creditsWon: Integer, creditsLost: Integer,
+        cnpg: Integer, avg: Integer)
+
+<section class="old-container mt-5">
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Description</th>
+                <th>Last known data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Your Email</td>
+                <td>@email</td>
+            </tr>
+
+            <tr>
+                <td>Saved Date</td>
+                <td>@date</td>
+            </tr>
+
+            <tr>
+                <td>Total Wins</td>
+                <td>@totalWins</td>
+            </tr>
+            <tr>
+                <td>Total Loses</td>
+                <td>@totalLoses</td>
+            </tr>
+            <tr>
+                <td>Total PartialWins</td>
+                <td>@totalPartialWins</td>
+            </tr>
+            <tr>
+                <td>Total Spins</td>
+                <td>@totalSpins</td>
+            </tr>
+            <tr>
+                <td>Credits Won</td>
+                <td>@creditsWon $</td>
+            </tr>
+            <tr>
+                <td>Credits Lost</td>
+                <td>@creditsLost $</td>
+            </tr>
+            <tr>
+                <td>Coins Netted</td>
+                <td>@cnpg $</td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td>@avg %</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p class="text-center copy">- Developed by Yazeen Thariq -</p>
+
+</section>
+
+<style>
+        .copy {
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: url("/assets/images/cover.png") repeat;
+        }
+
+        .old-container {
+
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            top: 40px;
+            margin: auto;
+            border-radius: 10px;
+            width: 60%;
+            height: 640px;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.18);
+            padding: 10px;
+            align-items: center;
+        }
+</style>
+
+<br>
+<br>
+<br>
+<br>
